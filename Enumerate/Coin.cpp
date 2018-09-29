@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstring>
 
@@ -11,12 +12,12 @@ bool IsFake(char c, bool light);    //light为真表示假设假币为轻，否�
 /* POJ1013 称硬币 */
 int main()
 {
-    int t;      //
+    int t;      //判断有几组例子
     cin >> t;
     while (t--) {
-        for (int i = 0; i < 3; ++i)     //
+        for (int i = 0; i < 3; ++i)     //读入一组例子，存入数组重
             cin >> Left[i] >> Right[i] >> Result[i];
-        for (char c = 'A'; c <= 'Z'; ++c){      //
+        for (char c = 'A'; c <= 'L'; ++c){      //遍历A到L的13个字符
             if (IsFake(c, true)){
                 cout << c << " is the counterfeit coin and it it light." << endl;
                 break;
@@ -42,7 +43,7 @@ bool IsFake(char c, bool light)
             pLeft = Right[i];
             pRight = Left[i];
         }
-        switch (Result[i][0]){
+        switch (Result[i][0]){     //switch statement requires expression of integer type
             case 'u':
                 if (strchr(pRight, c) == NULL)
                     return false;
