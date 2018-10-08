@@ -24,7 +24,7 @@ void Merge(int a[], int s, int e, int m, int tmp[])
         a[s+i] = tmp[i];
 }
 
-//归并排序
+//归并排序，复杂度O(nlogn)
 void MergeSort(int a[], int s, int e, int tmp[])
 {
     if (s < e){     //当s <= e时，需要排序的元素只有一个
